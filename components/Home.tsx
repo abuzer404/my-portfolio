@@ -169,7 +169,7 @@ const Home: React.FC = () => {
             </span>
           </h1>
           <p className="max-w-2xl text-base sm:text-lg md:text-xl text-gray-300 mb-8">
-            Motivated Computer Science and Engineering graduate with solid knowledge in systems administration, web development, and data analysis. Skilled in Linux/Windows environments, troubleshooting, and virtualization. Eager to support IT operations and grow within a dynamic tech team.
+            Motivated Computer Science and Engineering graduate with solid knowledge in systems administration, web development, and data analysis. Skilled in Linux/Windows environments, Eager to support IT operations and grow within a dynamic tech team.
           </p>
           <div className="flex flex-col sm:flex-row gap-4">
             <a href="#contact" className="px-8 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(0,255,255,0.4)]">
