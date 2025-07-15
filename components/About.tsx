@@ -13,7 +13,7 @@ const About: React.FC = () => {
       <div className="grid md:grid-cols-5 gap-12 items-center">
         <div className="md:col-span-2 flex justify-center group">
           <div className="relative">
-            <img src="https://picsum.photos/seed/cs-grad/400/400" alt="Abuzer Nasir Shafi" className="rounded-full w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover border-4 border-cyan-400 shadow-lg shadow-cyan-400/20 transition-transform duration-500 group-hover:scale-105" />
+            <img src="/me.jpg" alt="Abuzer Nasir Shafi" className="rounded-full w-56 h-56 sm:w-64 sm:h-64 md:w-80 md:h-80 object-cover border-4 border-cyan-400 shadow-lg shadow-cyan-400/20 transition-transform duration-500 group-hover:scale-105" />
              <div className="absolute inset-0 rounded-full border-4 border-magenta-500 animate-spin-slow group-hover:animate-[spin_4s_linear_infinite]"></div>
           </div>
         </div>
