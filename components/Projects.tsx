@@ -81,7 +81,7 @@ const Projects: React.FC = () => {
       </div>
       <div className="flex justify-center mt-12">
         <a
-          href="https://github.com/abuzernasir"
+          href="https://github.com/abuzer404"
           target="_blank"
           rel="noopener noreferrer"
           className="px-8 py-3 bg-transparent border-2 border-cyan-400 text-cyan-400 font-semibold rounded-lg hover:bg-cyan-400 hover:text-black transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(0,255,255,0.4)]"
