@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             <a href="#contact" className="px-8 py-3 bg-cyan-400 text-black font-semibold rounded-lg hover:bg-cyan-300 transition-all transform hover:scale-105 shadow-[0_0_15px_rgba(0,255,255,0.4)]">
               Hire Me
             </a>
-            <a href="#projects" className="px-8 py-3 bg-transparent border-2 border-magenta-500 text-magenta-500 font-semibold rounded-lg hover:bg-magenta-500 hover:text-black transition-all transform hover:scale-105">
+            <a href="#projects" className="px-8 py-3 bg-transparent border-2 border-magenta-500 text-magenta-500 font-semibold rounded-lg hover:bg-magenta-500 hover:text-cyan-400 transition-all transform hover:scale-105">
               View Work
             </a>
           </div>

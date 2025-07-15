@@ -32,7 +32,7 @@ const Header: React.FC = () => {
   return (
     <>
       <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled || isMenuOpen ? 'py-4 bg-black/50 backdrop-blur-lg border-b border-cyan-400/20' : 'py-6'}`}>
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 flex justify-between items-center">
+        <nav className="max-w-5xl mx-auto px-4 sm:px-6 flex justify-between items-center">
           <a href="#home" className="text-2xl font-bold text-white hover:text-cyan-400 transition-colors" onClick={() => setIsMenuOpen(false)}>
             <span className="text-cyan-400">&lt;</span>A.Shafi<span className="text-cyan-400">/&gt;</span>
           </a>
