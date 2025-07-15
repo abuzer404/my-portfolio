@@ -60,12 +60,56 @@ const Home: React.FC = () => {
             style={{ 
               transform: 'perspective(1000px) rotateX(var(--rotateX, 0)) rotateY(var(--rotateY, 0))',
               transformStyle: 'preserve-3d',
+              boxShadow: '0 12px 32px 0 rgba(0,0,0,0.45), 0 2px 8px 0 rgba(0,255,255,0.15)',
+              borderRadius: '32px',
+              background: 'linear-gradient(145deg, #0a1a22 60%, #1a3a4a 100%)',
+              border: '4px solid #00eaff',
+              overflow: 'visible',
             }}
           >
-            <div className="absolute inset-0 bg-cyan-400/20 rounded-lg blur-xl"></div>
-            <div className="absolute inset-2 bg-black rounded-md" style={{ transform: 'translateZ(-20px)' }}></div>
-            <div className="absolute inset-4 border-2 border-cyan-400 rounded-md" style={{ transform: 'translateZ(0px)' }}></div>
-            <div className="absolute inset-8 border-2 border-magenta-500/50 rounded-md animate-pulse" style={{ transform: 'translateZ(20px)' }}></div>
+            {/* Glossy highlight */}
+            <div
+              style={{
+                position: 'absolute',
+                top: '12px',
+                left: '24px',
+                width: '60%',
+                height: '20%',
+                background: 'linear-gradient(120deg, rgba(255,255,255,0.25), rgba(255,255,255,0))',
+                borderRadius: '50%',
+                filter: 'blur(2px)',
+                pointerEvents: 'none',
+                zIndex: 2,
+              }}
+            />
+            {/* Blush/cheeks */}
+            <div
+              style={{
+                position: 'absolute',
+                left: '32px',
+                bottom: '56px',
+                width: '24px',
+                height: '12px',
+                background: 'rgba(255, 99, 132, 0.18)',
+                borderRadius: '50%',
+                filter: 'blur(0.5px)',
+                zIndex: 2,
+              }}
+            />
+            <div
+              style={{
+                position: 'absolute',
+                right: '32px',
+                bottom: '56px',
+                width: '24px',
+                height: '12px',
+                background: 'rgba(255, 99, 132, 0.18)',
+                borderRadius: '50%',
+                filter: 'blur(0.5px)',
+                zIndex: 2,
+              }}
+            />
+            {/* Eyes */}
             <div 
               className="absolute top-1/2 left-1/2 w-32 h-16 md:w-40 md:h-20 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
               style={{ transform: 'translateZ(40px) translateX(-50%) translateY(-50%)' }}
@@ -103,6 +147,20 @@ const Home: React.FC = () => {
                 />
               </svg>
             </div>
+            {/* Mouth */}
+            <svg
+              className="absolute left-1/2 bottom-6 md:bottom-10 w-20 h-8 -translate-x-1/2"
+              viewBox="0 0 80 32"
+              style={{ zIndex: 3 }}
+            >
+              <path
+                d="M16 8 Q40 32 64 8"
+                stroke="#ffb6b6"
+                strokeWidth="4"
+                fill="none"
+                strokeLinecap="round"
+              />
+            </svg>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter mb-4">
