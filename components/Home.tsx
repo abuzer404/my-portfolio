@@ -7,6 +7,25 @@ const Home: React.FC = () => {
   const [glowStyle, setGlowStyle] = useState({});
   const containerRef = useRef<HTMLDivElement>(null);
 
+  // Eye pupil state
+  const [pupil, setPupil] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    if (!containerRef.current) return;
+    const rect = containerRef.current.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+    const dx = x - centerX;
+    const dy = y - centerY;
+    // Limit the pupil movement
+    const maxDist = 18;
+    const dist = Math.min(Math.sqrt(dx*dx + dy*dy), maxDist);
+    const angle = Math.atan2(dy, dx);
+    setPupil({
+      x: Math.cos(angle) * dist,
+      y: Math.sin(angle) * dist,
+    });
+  }, [x, y]);
+
   useEffect(() => {
     setGlowStyle({
       background: `radial-gradient(600px at ${x}px ${y}px, rgba(45, 212, 191, 0.15), transparent 80%)`
@@ -48,10 +67,41 @@ const Home: React.FC = () => {
             <div className="absolute inset-4 border-2 border-cyan-400 rounded-md" style={{ transform: 'translateZ(0px)' }}></div>
             <div className="absolute inset-8 border-2 border-magenta-500/50 rounded-md animate-pulse" style={{ transform: 'translateZ(20px)' }}></div>
             <div 
-              className="absolute top-1/2 left-1/2 w-16 h-16 md:w-20 md:h-20 -translate-x-1/2 -translate-y-1/2 bg-cyan-400 rounded-sm flex items-center justify-center text-black font-bold text-4xl shadow-[0_0_20px_theme(colors.cyan.400)]"
+              className="absolute top-1/2 left-1/2 w-32 h-16 md:w-40 md:h-20 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center"
               style={{ transform: 'translateZ(40px) translateX(-50%) translateY(-50%)' }}
             >
-              AS
+              <svg width="100%" height="100%" viewBox="0 0 160 80">
+                {/* Left Eye */}
+                <ellipse cx="48" cy="40" rx="32" ry="32" fill="#e0f7fa" stroke="#00bcd4" strokeWidth="3"/>
+                <circle
+                  cx={48 + pupil.x}
+                  cy={40 + pupil.y}
+                  r="10"
+                  fill="#222"
+                />
+                <circle
+                  cx={48 + pupil.x + 3}
+                  cy={40 + pupil.y - 3}
+                  r="3"
+                  fill="#fff"
+                  opacity="0.7"
+                />
+                {/* Right Eye */}
+                <ellipse cx="112" cy="40" rx="32" ry="32" fill="#e0f7fa" stroke="#00bcd4" strokeWidth="3"/>
+                <circle
+                  cx={112 + pupil.x}
+                  cy={40 + pupil.y}
+                  r="10"
+                  fill="#222"
+                />
+                <circle
+                  cx={112 + pupil.x + 3}
+                  cy={40 + pupil.y - 3}
+                  r="3"
+                  fill="#fff"
+                  opacity="0.7"
+                />
+              </svg>
             </div>
           </div>
 
